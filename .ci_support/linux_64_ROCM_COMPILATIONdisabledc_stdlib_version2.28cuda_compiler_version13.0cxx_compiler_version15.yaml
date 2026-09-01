@@ -1,13 +1,9 @@
-MACOSX_DEPLOYMENT_TARGET:
-- '11.0'
-MACOSX_SDK_VERSION:
-- '11.0'
 ROCM_COMPILATION:
 - disabled
 c_stdlib:
-- macosx_deployment_target
+- sysroot
 c_stdlib_version:
-- '11.0'
+- '2.28'
 channel_sources:
 - conda-forge
 channel_targets:
@@ -15,16 +11,20 @@ channel_targets:
 cuda_compiler:
 - cuda-nvcc
 cuda_compiler_version:
-- None
+- '13.0'
 cxx_compiler:
-- clangxx
+- gxx
 cxx_compiler_version:
-- '21'
+- '15'
+docker_image:
+- quay.io/condaforge/linux-anvil-x86_64:alma10
 libhwloc:
 - 2.13.0
 libxml2_devel:
 - '2.15'
-macos_machine:
-- arm64-apple-darwin20.0.0
 target_platform:
-- osx-arm64
+- linux-64
+zip_keys:
+- - cxx_compiler_version
+  - c_stdlib_version
+  - cuda_compiler_version
